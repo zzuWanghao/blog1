@@ -41,32 +41,29 @@ const actions = {
         await auth.logout()
         commit('setUser', {user: null})
         commit('setLogin', {isLogin: false})
+        localStorage.removeItem('token')
         console.log('hi whh')
     },
     async checkLogin({commit, state}) {
 
-        console.log('我是检查是否登录1')
-        console.log(state.isLogin)
+        // console.log('我是检查是否登录1')
+        // console.log(state.isLogin)
         if (state.isLogin) {
-
             return true
-
         }
         let res = await auth.getInfo()
         commit('setLogin', {isLogin: res.isLogin})
-        console.log('我是检查是否登录2')
-        console.log(res)
+        // console.log('我是检查是否登录2')
+        // console.log(res)
         if (!res.isLogin)
         {
             console.log('我是检查是否登录4')
             return false
         }
         commit('setUser', {user: res.data})
-        console.log('我是检查是否登录3')
-        console.log(state.isLogin)
+        // console.log('我是检查是否登录3')
+        // console.log(state.isLogin)
         return true
-
-
 
     }
     /*

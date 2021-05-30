@@ -70,7 +70,9 @@ export default function request(url, type = 'GET', data = {}) {
         }
 
         axios(option).then(res => {
+            console.log('哈哈哈大小')
             console.log(res.data)
+            console.log('哈哈哈大小')
             if(res.data.status === 'ok') {
                 if(res.data.token) {
                     localStorage.token = res.data.token
