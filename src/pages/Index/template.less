@@ -1,0 +1,45 @@
+@import '../../assets/base.less';
+
+
+.item {
+  display: grid;
+  grid: auto auto/80px 1fr;
+  margin: 20px 0;
+
+  .avatar {
+    grid-row: 1/span 2;
+    grid-column: 1;
+    justify-self: center;
+    margin-left: 0;
+    align-self: center;
+    text-align: center;
+
+    img {
+
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    figcaption {
+
+      font-size: 12px;
+      color: @textLighterColor;
+      font-weight: bolder;
+    }
+  }
+
+  h3 {
+    grid-row: 1;
+    grid-column: 2;
+
+    span {
+
+      color: @textLighterColor;
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+
+
+}
