@@ -12,14 +12,14 @@
   <template v-if="isLogin">
 
     <h1>
-      LET'S SHARE
+     <router-link to="/">LET'S SHARE</router-link>
     </h1>
-    <i class="edit el-icon-edit"></i>
+   <router-link to="/create"> <i class="edit el-icon-plus"></i> </router-link>
 
     <div class="user">
-    <img class="avatar" src="https://avatars.dicebear.com/api/human/:seed.svg" :alt="user.username" :title="user.username">
+    <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
     <ul>
-      <li><router-link to="mine">我的</router-link></li>
+      <li><router-link to="/mine">我的</router-link></li>
       <li><a href="#" @click="onLogout">注销</a></li>
     </ul>
     </div>
@@ -74,6 +74,7 @@ header.no-login{
     font-size: 40px;
     margin: 60px 0 0 0;
     text-transform: uppercase;
+
   }
 
   p{
@@ -94,11 +95,15 @@ header.login{
   background:@bgColor;
   display: flex;
   h1{
-    color: #fff;
+
     font-size: 40px;
     margin: 10px 0 ;
     text-transform: uppercase;
     flex: 1;
+
+    a{
+      color: #fff;
+    }
   }
 
   .edit{
